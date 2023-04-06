@@ -9,6 +9,8 @@ async function run() {
         // Get the input parameters
         const token = core.getInput('github-token');
         console.log(token)
+        console.log(`GitHub Token: ${token}`);
+        core.debug(`The GitHub token is ${token}`);
         const owner = github.context.repo.owner;
         console.log(owner)
         const repo = github.context.repo.repo;
