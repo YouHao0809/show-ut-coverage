@@ -1,0 +1,12 @@
+name: Test Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Run tests
+      uses: ./ # This will use the action in the current directory
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
