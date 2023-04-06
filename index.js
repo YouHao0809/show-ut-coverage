@@ -38,6 +38,7 @@ async function run() {
 
         // Initialize the GitHub API client
         const client = github.getOctokit(token);
+        console.log(client);
 
         // Create a new Check
         const checkName = 'Unit Tests and Coverage';
