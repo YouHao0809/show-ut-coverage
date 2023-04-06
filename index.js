@@ -38,7 +38,7 @@ async function run() {
 
         // Initialize the GitHub API client
         const client = github.getOctokit(token);
-        console.log(client);
+        console.log(client.checks);
 
         // Create a new Check
         const checkName = 'Unit Tests and Coverage';
@@ -61,7 +61,7 @@ async function run() {
         core.setOutput('check-id', checkId);
     } catch (error) {
         console.log("Error")
-        console.error(error);
+        console.log(error);
         core.setFailed(error.message);
     }
 }
