@@ -10,8 +10,11 @@ async function run() {
         const token = core.getInput('github-token');
         console.log(token)
         const owner = github.context.repo.owner;
+        console.log(owner)
         const repo = github.context.repo.repo;
+        console.log(repo)
         const sha = github.context.sha;
+        console.log(sha)
 
         // Read the lcov.info file
         const lcovFile = './coverage/lcov.info';
