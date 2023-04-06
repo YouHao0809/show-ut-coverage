@@ -60,6 +60,8 @@ async function run() {
         // Set the output parameters
         core.setOutput('check-id', checkId);
     } catch (error) {
+        console.log("Error")
+        console.error(error);
         core.setFailed(error.message);
     }
 }
