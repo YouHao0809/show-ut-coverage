@@ -11,6 +11,7 @@ inputs:
   github-token:
     description: "The GitHub token used to authenticate API requests."
     required: true
+    default: "${{ github.token }}"
 
 outputs:
   check-id:

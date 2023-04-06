@@ -8,9 +8,7 @@ async function run() {
     try {
         // Get the input parameters
         const token = core.getInput('github-token');
-        console.log(token)
         console.log(`GitHub Token: ${token}`);
-        core.debug(`The GitHub token is ${token}`);
         const owner = github.context.repo.owner;
         console.log(owner)
         const repo = github.context.repo.repo;
@@ -60,7 +58,6 @@ async function run() {
         // Set the output parameters
         core.setOutput('check-id', checkId);
     } catch (error) {
-        console.log("Error")
         console.log(error);
         core.setFailed(error.message);
     }
@@ -130,7 +127,7 @@ async function updateCheck(client, checkId, checkData) {
     try {
         await client.checks.update(updateParams);
     } catch (error) {
-        console.error(error);
+        console.log(error);
         throw new Error(`Failed to update check: ${error.message}`);
     }
 }
