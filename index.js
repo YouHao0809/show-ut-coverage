@@ -8,6 +8,7 @@ async function run() {
     try {
         // Get the input parameters
         const token = core.getInput('github-token');
+        console.log(token)
         const owner = github.context.repo.owner;
         const repo = github.context.repo.repo;
         const sha = github.context.sha;
