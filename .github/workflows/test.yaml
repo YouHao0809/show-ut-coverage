@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
     - name: Run tests
       uses: ./ # This will use the action in the current directory
       with:
